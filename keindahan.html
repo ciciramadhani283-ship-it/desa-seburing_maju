@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keindahan Desa - Desa Seburing Maju</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .judul-keindahan {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .judul-keindahan h1 {
+            color: #176b4d;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .judul-keindahan p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .galeri {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .foto-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .foto-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .foto-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .keterangan {
+            padding: 20px;
+        }
+
+        .keterangan h3 {
+            color: #176b4d;
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+
+        .keterangan p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .ajakan {
+            margin-top: 50px;
+            text-align: center;
+            background: #176b4d;
+            color: white;
+            padding: 50px 20px;
+            border-radius: 20px;
+        }
+
+        .ajakan h2 {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .galeri {
+                grid-template-columns: 1fr;
+            }
+
+            .judul-keindahan h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo">
+            🌿 Desa Seburing Maju
+        </div>
+
+        <ul>
+            <li>
+                <a href="index.html">Beranda</a>
+            </li>
+
+            <li>
+                <a href="tentang.html">Tentang Desa</a>
+            </li>
+
+            <li>
+                <a href="profil.html">Profil Desa</a>
+            </li>
+
+            <li>
+                <a href="potensi.html">Potensi Desa</a>
+            </li>
+
+            <li>
+                <a href="keindahan.html">Keindahan</a>
+            </li>
+
+            <li>
+                <a href="kontak.html">Kontak</a>
+            </li>
+
+            <li>
+                <a href="pengaduan.html">Pengaduan</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <!-- ISI HALAMAN -->
+    <section class="container">
+
+        <div class="judul-keindahan">
+
+            <p class="small-title">
+                GALERI DESA
+            </p>
+
+            <h1>
+                Keindahan Desa Seburing Maju
+            </h1>
+
+            <p>
+                Keindahan alam, tempat ibadah, dan lingkungan
+                Desa Seburing Maju.
+            </p>
+
+        </div>
+
+
+        <!-- GALERI -->
+        <div class="galeri">
+
+
+            <!-- FOTO BUNGA MERAH -->
+            <div class="foto-card">
+
+                <img
+                    src="images/gambar bunga merah.jpg"
+                    alt="Bunga Merah Desa Seburing Maju"
+                >
+
+                <div class="keterangan">
+
+                    <h3>
+                        🌺 Bunga Merah
+                    </h3>
+
+                    <p>
+                        Keindahan bunga yang tumbuh dan
+                        memperindah lingkungan Desa Seburing Maju.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO BUNGA UNGU -->
+            <div class="foto-card">
+
+                <img
+                    src="images/gambar bunga ungu - Copy - Copy.jpg"
+                    alt="Bunga Ungu Desa Seburing Maju"
+                >
+
+                <div class="keterangan">
+
+                    <h3>
+                        🌸 Bunga Ungu
+                    </h3>
+
+                    <p>
+                        Keindahan tanaman dan bunga yang
+                        menjadi bagian dari lingkungan desa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO MASJID -->
+            <div class="foto-card">
+
+                <img
+                    src="images/mesjid ella.jpg"
+                    alt="Masjid Desa Seburing Maju"
+                >
+
+                <div class="keterangan">
+
+                    <h3>
+                        🕌 Masjid Desa
+                    </h3>
+
+                    <p>
+                        Salah satu tempat ibadah yang menjadi
+                        bagian dari kehidupan masyarakat desa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO JALAN -->
+            <div class="foto-card">
+
+                <img
+                    src="images/gambarjalan seburingmaju.jpg"
+                    alt="Jalan Desa Seburing Maju"
+                >
+
+                <div class="keterangan">
+
+                    <h3>
+                        🛣️ Jalan Desa
+                    </h3>
+
+                    <p>
+                        Jalan desa yang menjadi akses bagi
+                        masyarakat dalam melakukan aktivitas sehari-hari.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AJAKAN -->
+        <div class="ajakan">
+
+            <h2>
+                🌿 Mari Jaga Keindahan Desa
+            </h2>
+
+            <p>
+                Bersama-sama menjaga kebersihan,
+                keindahan, dan lingkungan Desa Seburing Maju.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>
+            🌿 Desa Seburing Maju
+        </h3>
+
+        <p>
+            Website Informasi dan Pelayanan Masyarakat
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Desa Seburing Maju
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

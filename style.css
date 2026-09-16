@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #222;
+}
+
+nav {
+    background: #176b4d;
+    color: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    color: #b8f2d4;
+}
+
+.hero {
+    min-height: 420px;
+    background: linear-gradient(135deg, #176b4d, #35a978);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 8%;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: white;
+    color: #176b4d;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.title h2 {
+    color: #176b4d;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3 {
+    color: #176b4d;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.7;
+    color: #555;
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+button {
+    border: none;
+    padding: 13px 25px;
+    background: #176b4d;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0e513a;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #176b4d;
+    color: white;
+}
+
+.delete {
+    background: #d9534f;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    background: #176b4d;
+    color: white;
+    text-align: center;
+}
+
+@media(max-width: 800px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
