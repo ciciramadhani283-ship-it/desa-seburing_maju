@@ -1,15 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pengaduan Warga</title>
+    <title>Pengaduan Warga - Desa Seburing Maju</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav>
 
@@ -17,23 +28,69 @@
         🌿 Desa Seburing Maju
     </div>
 
+
     <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="potensi.html">Potensi</a></li>
-        <li><a href="keindahan.html">Keindahan</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="pengaduan.html">Pengaduan</a></li>
+
+        <li>
+            <a href="index.html">
+                Beranda
+            </a>
+        </li>
+
+        <li>
+            <a href="tentang.html">
+                Tentang
+            </a>
+        </li>
+
+        <li>
+            <a href="profil.html">
+                Profil
+            </a>
+        </li>
+
+        <li>
+            <a href="potensi.html">
+                Potensi
+            </a>
+        </li>
+
+        <li>
+            <a href="keindahan.html">
+                Keindahan
+            </a>
+        </li>
+
+        <li>
+            <a href="kontak.html">
+                Kontak
+            </a>
+        </li>
+
+        <li>
+            <a href="pengaduan.html" class="active">
+                Pengaduan
+            </a>
+        </li>
+
     </ul>
 
 </nav>
 
+
+
+<!-- =========================
+     PENGADUAN
+========================= -->
+
 <section class="container">
+
 
     <div class="title">
 
-        <h2>Pengaduan Masyarakat</h2>
+        <h2>
+            Pengaduan Masyarakat
+        </h2>
 
         <p>
             Sampaikan pengaduan, kritik, dan saran
@@ -42,63 +99,337 @@
 
     </div>
 
+
+
     <div class="form-box">
+
 
         <form id="formPengaduan">
 
-            <label>Nama</label>
+
+            <!-- NAMA -->
+
+            <label for="nama">
+                Nama
+            </label>
 
             <input
                 type="text"
                 id="nama"
+                name="nama"
                 placeholder="Masukkan nama Anda"
+                required
             >
 
-            <label>Kategori Pengaduan</label>
 
-            <select id="kategori">
+
+            <!-- KATEGORI -->
+
+            <label for="kategori">
+                Kategori Pengaduan
+            </label>
+
+            <select
+                id="kategori"
+                name="kategori"
+                required
+            >
 
                 <option value="">
                     -- Pilih Kategori --
                 </option>
 
-                <option>Infrastruktur</option>
+                <option value="Infrastruktur">
+                    Infrastruktur
+                </option>
 
-                <option>Pelayanan Desa</option>
+                <option value="Pelayanan Desa">
+                    Pelayanan Desa
+                </option>
 
-                <option>Lingkungan</option>
+                <option value="Lingkungan">
+                    Lingkungan
+                </option>
 
-                <option>Keamanan</option>
+                <option value="Keamanan">
+                    Keamanan
+                </option>
 
-                <option>Lainnya</option>
+                <option value="Lainnya">
+                    Lainnya
+                </option>
 
             </select>
 
-            <label>Isi Pengaduan</label>
+
+
+            <!-- ISI PENGADUAN -->
+
+            <label for="isi">
+                Isi Pengaduan
+            </label>
 
             <textarea
                 id="isi"
+                name="isi_pengaduan"
                 placeholder="Tuliskan pengaduan Anda..."
+                required
             ></textarea>
 
+
+
+            <!-- TOMBOL -->
+
             <button
-                type="button"
-                onclick="kirimPengaduan()"
+                type="submit"
+                id="btnKirim"
             >
                 Kirim Pengaduan
             </button>
 
+
         </form>
+
+
+        <!-- PESAN -->
+
+        <div
+            id="pesan"
+            style="margin-top: 15px;"
+        ></div>
+
 
     </div>
 
+
 </section>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
     © 2026 Desa Seburing Maju
+
 </footer>
 
-<script src="script.js"></script>
+
+
+<script>
+
+
+// ==================================================
+// API GOOGLE APPS SCRIPT
+// ==================================================
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbywegBy98GOQxDyWtociUqRnRGBqcs5AnKL5wyGyXudi-I-0DWAY5TgDvrw84DfBRQWew/exec";
+
+
+
+// ==================================================
+// FORM PENGADUAN
+// ==================================================
+
+document
+.getElementById("formPengaduan")
+.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+
+    // Ambil data
+
+    const nama =
+        document.getElementById("nama").value.trim();
+
+    const kategori =
+        document.getElementById("kategori").value;
+
+    const isi =
+        document.getElementById("isi").value.trim();
+
+
+    const tombol =
+        document.getElementById("btnKirim");
+
+    const pesan =
+        document.getElementById("pesan");
+
+
+
+    // ==================================================
+    // VALIDASI
+    // ==================================================
+
+    if (nama === "") {
+
+        alert("Nama harus diisi!");
+
+        return;
+    }
+
+
+    if (kategori === "") {
+
+        alert("Silakan pilih kategori pengaduan!");
+
+        return;
+    }
+
+
+    if (isi === "") {
+
+        alert("Isi pengaduan harus diisi!");
+
+        return;
+    }
+
+
+
+    // ==================================================
+    // TOMBOL LOADING
+    // ==================================================
+
+    tombol.disabled = true;
+
+    tombol.innerText = "Mengirim...";
+
+    pesan.innerHTML = "";
+
+
+
+    // ==================================================
+    // DATA YANG DIKIRIM
+    // ==================================================
+
+    const data = {
+
+        nama: nama,
+
+        kategori: kategori,
+
+        isi_pengaduan: isi
+
+    };
+
+
+
+    // ==================================================
+    // KIRIM KE GOOGLE APPS SCRIPT
+    // ==================================================
+
+    try {
+
+        const response =
+            await fetch(API_URL, {
+
+                method: "POST",
+
+                body: JSON.stringify(data)
+
+            });
+
+
+        const hasil =
+            await response.json();
+
+
+
+        // ==================================================
+        // BERHASIL
+        // ==================================================
+
+        if (hasil.success) {
+
+            pesan.innerHTML = `
+                <div style="
+                    padding:15px;
+                    background:#d4edda;
+                    color:#155724;
+                    border-radius:8px;
+                ">
+                    <strong>Pengaduan berhasil dikirim!</strong>
+                    <br>
+                    ID Pengaduan:
+                    ${hasil.id}
+                </div>
+            `;
+
+
+            // Kosongkan form
+
+            document
+                .getElementById("formPengaduan")
+                .reset();
+
+        }
+
+
+        // ==================================================
+        // GAGAL
+        // ==================================================
+
+        else {
+
+            pesan.innerHTML = `
+                <div style="
+                    padding:15px;
+                    background:#f8d7da;
+                    color:#721c24;
+                    border-radius:8px;
+                ">
+                    Pengaduan gagal dikirim.
+                    <br>
+                    ${hasil.message}
+                </div>
+            `;
+
+        }
+
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+
+        pesan.innerHTML = `
+            <div style="
+                padding:15px;
+                background:#f8d7da;
+                color:#721c24;
+                border-radius:8px;
+            ">
+                Terjadi kesalahan saat mengirim
+                pengaduan.
+                <br><br>
+                Silakan coba lagi.
+            </div>
+        `;
+
+    }
+
+
+    // ==================================================
+    // KEMBALIKAN TOMBOL
+    // ==================================================
+
+    tombol.disabled = false;
+
+    tombol.innerText = "Kirim Pengaduan";
+
+
+});
+
+</script>
+
 
 </body>
+
 </html>
+
