@@ -1,15 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Admin - Desa Seburing Maju</title>
 
     <link rel="stylesheet" href="style.css">
 
+
     <style>
+
         .admin-header {
             text-align: center;
             margin-bottom: 35px;
@@ -48,6 +56,10 @@
             cursor: pointer;
         }
 
+        .btn-refresh:hover {
+            opacity: 0.85;
+        }
+
         .btn-delete {
             background: #d9534f;
             color: white;
@@ -57,151 +69,458 @@
             cursor: pointer;
         }
 
-        table {
-            min-width: 850px;
+        .btn-delete:hover {
+            background: #c9302c;
         }
+
+        table {
+            width: 100%;
+            min-width: 850px;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background: #176b4d;
+            color: white;
+        }
+
+        table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 25px;
+            color: #176b4d;
+        }
+
+        .error {
+            text-align: center;
+            padding: 20px;
+            color: #d9534f;
+        }
+
     </style>
 
 </head>
 
+
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
 
-        <div class="logo">
-            🌿 Desa Seburing Maju
-        </div>
+<!-- =========================
+     NAVBAR
+========================= -->
 
-        <ul>
+<nav>
 
-            <li>
-                <a href="index.html">Beranda</a>
-            </li>
-
-            <li>
-                <a href="tentang.html">Tentang Desa</a>
-            </li>
-
-            <li>
-                <a href="profil.html">Profil Desa</a>
-            </li>
-
-            <li>
-                <a href="potensi.html">Potensi Desa</a>
-            </li>
-
-            <li>
-                <a href="keindahan.html">Keindahan</a>
-            </li>
-
-            <li>
-                <a href="kontak.html">Kontak</a>
-            </li>
-
-            <li>
-                <a href="pengaduan.html">📢 Pengaduan</a>
-            </li>
-
-            <li>
-                <a href="admin.html">🔐 Admin</a>
-            </li>
-
-        </ul>
-
-    </nav>
+    <div class="logo">
+        🌿 Desa Seburing Maju
+    </div>
 
 
-    <!-- HALAMAN ADMIN -->
-    <section class="container">
+    <ul>
 
-        <div class="admin-header">
+        <li>
+            <a href="index.html">
+                Beranda
+            </a>
+        </li>
 
-            <p class="small-title">
-                HALAMAN ADMIN
-            </p>
+        <li>
+            <a href="tentang.html">
+                Tentang Desa
+            </a>
+        </li>
 
-            <h1>
-                Dashboard Admin Desa
-            </h1>
+        <li>
+            <a href="profil.html">
+                Profil Desa
+            </a>
+        </li>
 
-            <p>
-                Kelola data pengaduan masyarakat
-                Desa Seburing Maju.
-            </p>
+        <li>
+            <a href="potensi.html">
+                Potensi Desa
+            </a>
+        </li>
 
-        </div>
+        <li>
+            <a href="keindahan.html">
+                Keindahan
+            </a>
+        </li>
 
+        <li>
+            <a href="kontak.html">
+                Kontak
+            </a>
+        </li>
 
-        <div class="admin-box">
+        <li>
+            <a href="pengaduan.html">
+                📢 Pengaduan
+            </a>
+        </li>
 
-            <div class="admin-title">
+        <li>
+            <a href="admin.html" class="active">
+                🔐 Admin
+            </a>
+        </li>
 
-                <h2>
-                    📢 Data Pengaduan Warga
-                </h2>
+    </ul>
 
-                <button
-                    class="btn-refresh"
-                    onclick="tampilkanPengaduan()">
-                    🔄 Refresh
-                </button>
-
-            </div>
-
-
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Kategori</th>
-                        <th>Isi Pengaduan</th>
-                        <th>Tanggal</th>
-                        <th>Aksi</th>
-                    </tr>
-
-                </thead>
-
-                <tbody id="dataPengaduan">
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
+</nav>
 
 
-    <!-- FOOTER -->
-    <footer>
 
-        <h3>
-            🌿 Desa Seburing Maju
-        </h3>
+<!-- =========================
+     HALAMAN ADMIN
+========================= -->
 
-        <p>
-            Admin Website Desa
+<section class="container">
+
+
+    <div class="admin-header">
+
+        <p class="small-title">
+            HALAMAN ADMIN
         </p>
 
-        <br>
+
+        <h1>
+            Dashboard Admin Desa
+        </h1>
+
 
         <p>
-            © 2026 Desa Seburing Maju
+            Kelola data pengaduan masyarakat
+            Desa Seburing Maju.
         </p>
 
-    </footer>
+    </div>
 
 
-    <script src="script.js"></script>
 
-    <script>
-        tampilkanPengaduan();
-    </script>
+    <div class="admin-box">
+
+
+        <div class="admin-title">
+
+            <h2>
+                📢 Data Pengaduan Warga
+            </h2>
+
+
+            <button
+                class="btn-refresh"
+                onclick="tampilkanPengaduan()"
+            >
+                🔄 Refresh
+            </button>
+
+        </div>
+
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>No</th>
+
+                    <th>ID</th>
+
+                    <th>Nama</th>
+
+                    <th>Kategori</th>
+
+                    <th>Isi Pengaduan</th>
+
+                    <th>Tanggal</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="dataPengaduan">
+
+                <tr>
+
+                    <td
+                        colspan="7"
+                        class="loading"
+                    >
+                        Memuat data pengaduan...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        🌿 Desa Seburing Maju
+    </h3>
+
+
+    <p>
+        Admin Website Desa
+    </p>
+
+
+    <br>
+
+
+    <p>
+        © 2026 Desa Seburing Maju
+    </p>
+
+</footer>
+
+
+
+<script>
+
+// ==================================================
+// API URL GOOGLE APPS SCRIPT
+// ==================================================
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbywegBy98GOQxDyWtociUqRnRGBqcs5AnKL5wyGyXudi-I-0DWAY5TgDvrw84DfBRQWew/exec";
+
+
+// ==================================================
+// MENAMPILKAN DATA PENGADUAN
+// ==================================================
+
+async function tampilkanPengaduan() {
+
+    const tbody =
+        document.getElementById("dataPengaduan");
+
+
+    tbody.innerHTML = `
+        <tr>
+            <td colspan="7" class="loading">
+                🔄 Mengambil data dari database...
+            </td>
+        </tr>
+    `;
+
+
+    try {
+
+        const response =
+            await fetch(API_URL);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "HTTP Error " + response.status
+            );
+
+        }
+
+
+        const hasil =
+            await response.json();
+
+
+        if (!hasil.success) {
+
+            throw new Error(
+                hasil.message || "Gagal mengambil data."
+            );
+
+        }
+
+
+        const data =
+            hasil.data || [];
+
+
+        // ==========================================
+        // JIKA BELUM ADA DATA
+        // ==========================================
+
+        if (data.length === 0) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td
+                        colspan="7"
+                        style="text-align:center;padding:25px;"
+                    >
+                        📭 Belum ada pengaduan.
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        // ==========================================
+        // TAMPILKAN DATA
+        // ==========================================
+
+        tbody.innerHTML = "";
+
+
+        data.forEach(function(item, index) {
+
+
+            const tanggal =
+                item.tanggal
+                ? new Date(item.tanggal)
+                    .toLocaleString("id-ID")
+                : "-";
+
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td>
+                    ${item.id || "-"}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.nama || "-")}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.kategori || "-")}
+                </td>
+
+                <td>
+                    ${escapeHTML(item.isi_pengaduan || "-")}
+                </td>
+
+                <td>
+                    ${tanggal}
+                </td>
+
+                <td>
+
+                    <span class="status">
+
+                        ${escapeHTML(item.status || "Menunggu")}
+
+                    </span>
+
+                </td>
+
+            `;
+
+
+            tbody.appendChild(row);
+
+        });
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="7"
+                    class="error"
+                >
+
+                    ❌ Gagal mengambil data pengaduan.
+
+                    <br><br>
+
+                    ${escapeHTML(error.message)}
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+// ==================================================
+// MENCEGAH HTML DARI DATA SPREADSHEET
+// ==================================================
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+// ==================================================
+// JALANKAN OTOMATIS SAAT HALAMAN DIBUKA
+// ==================================================
+
+tampilkanPengaduan();
+
+</script>
+
 
 </body>
 
 </html>
+
+
